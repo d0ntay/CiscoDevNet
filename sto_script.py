@@ -3,11 +3,11 @@ import json
 import time
 import sys
 
-DNAC_URL = "dnac.fda.gov"
-DNAC_PORT = "443"
+DNAC_URL = ""
+DNAC_PORT = ""
 USERNAME = input("ad_dio_firsl.last: ")
 PASSWORD = input("PIN+RSA: ")
-DEVICES = ('fc015970-0156-42d7-9f4f-0ab65e34d620', '5d39bcd8-cfa0-4879-a286-0f2eaa44a349', '5bc1f9e7-141e-40cb-9387-5c67ba217cc7')
+DEVICES = ()
 requests.packages.urllib3.disable_warnings(requests.packages.urllib3.exceptions.InsecureRequestWarning)
 
 def main():
@@ -84,18 +84,18 @@ def get_cli_command(file_id, token, device_id):
     for line in lines:
         if '172.16' in line:
             formatted_lines.append(line.strip())
-    if device_id == 'fc015970-0156-42d7-9f4f-0ab65e34d620' or device_id == '5d39bcd8-cfa0-4879-a286-0f2eaa44a349':
-        if device_id == 'fc015970-0156-42d7-9f4f-0ab65e34d620':
-            print("adc-wgwr-01#show ip bgp all sum | in 172.16.2")
+    if device_id == '' or device_id == '':
+        if device_id == '':
+            print("")
             print(formatted_lines[3])
         else:
-            print("wodc-wgwr-01#show ip bgp all sum | in 172.16.2")
+            print("")
             print(formatted_lines[3])            
     else:
-        print("nctr-wgwr-01#show ip bgp all sum | in 172.16.2")
+        print("")
         print(formatted_lines[2])
         print("")
-        print("nctr-wgwr-01#show ip bgp all sum | in 172.16.5")        
+        print("")        
         print(formatted_lines[3])
     
             
